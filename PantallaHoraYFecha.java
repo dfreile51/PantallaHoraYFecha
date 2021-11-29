@@ -23,8 +23,8 @@ public class PantallaHoraYFecha {
      */
     public PantallaHoraYFecha() {
         pantallaDia = new PantallaDosDigitos(1, 31);
-        pantallaMes = new PantallaDosDigitos(1, 12);
-        pantallaAno = new PantallaDosDigitos(1, 9999);
+        pantallaMes = new PantallaDosDigitos(1, 13);
+        pantallaAno = new PantallaDosDigitos(1, 100);
         pantallaHoras = new PantallaDosDigitos(0, 24);
         pantallaMinutos = new PantallaDosDigitos(0, 60);
     }
