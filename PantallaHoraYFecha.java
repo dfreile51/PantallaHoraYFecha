@@ -36,15 +36,15 @@ public class PantallaHoraYFecha {
         pantallaMinutos.incrementaValorAlmacenado();
         if (pantallaMinutos.getValorAlmacenado() == 0) {
             pantallaHoras.incrementaValorAlmacenado();
-        }
-        else if (pantallaHoras.getValorAlmacenado() == 0) {
-            pantallaDia.incrementaValorAlmacenado();
-        }
-        else if (pantallaDia.getValorAlmacenado() == 1) {
-            pantallaMes.incrementaValorAlmacenado();
-        }
-        else if (pantallaMes.getValorAlmacenado() == 1) {
-            pantallaAno.incrementaValorAlmacenado();
+            if (pantallaHoras.getValorAlmacenado() == 0) {
+                pantallaDia.incrementaValorAlmacenado();
+                if (pantallaDia.getValorAlmacenado() == 1) {
+                    pantallaMes.incrementaValorAlmacenado();
+                    if (pantallaMes.getValorAlmacenado() == 1) {
+                        pantallaAno.incrementaValorAlmacenado();
+                    }
+                }
+            }
         }
     }
     
