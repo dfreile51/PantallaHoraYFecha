@@ -37,13 +37,13 @@ public class PantallaHoraYFecha {
         if (pantallaMinutos.getValorAlmacenado() == 0) {
             pantallaHoras.incrementaValorAlmacenado();
         }
-        if (pantallaHoras.getValorAlmacenado() == 0) {
+        else if (pantallaHoras.getValorAlmacenado() == 0) {
             pantallaDia.incrementaValorAlmacenado();
         }
-        if (pantallaDia.getValorAlmacenado() == 1) {
+        else if (pantallaDia.getValorAlmacenado() == 1) {
             pantallaMes.incrementaValorAlmacenado();
         }
-        if (pantallaMes.getValorAlmacenado() == 1) {
+        else if (pantallaMes.getValorAlmacenado() == 1) {
             pantallaAno.incrementaValorAlmacenado();
         }
     }
@@ -60,7 +60,7 @@ public class PantallaHoraYFecha {
     }
     
     /**
-     * Devuelve la hora y la fecha actual de esta pantalla en el formao HH:MM DD-MM-AA.
+     * Devuelve la hora y la fecha actual de esta pantalla en el formato HH:MM DD-MM-AA.
      */
     public String getHoraYFecha() {
         return pantallaHoras.getTextoDeLaPantalla() + ":" + pantallaMinutos.getTextoDeLaPantalla() + " " + pantallaDia.getTextoDeLaPantalla() + "-" + 
