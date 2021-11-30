@@ -28,4 +28,42 @@ public class PantallaHoraYFecha {
         pantallaHoras = new PantallaDosDigitos(0, 24);
         pantallaMinutos = new PantallaDosDigitos(0, 60);
     }
+    
+    /**
+     * Este metodo provoca el avance del reloj en un minuto.
+     */
+    public void avanzarMinuto() {
+        pantallaMinutos.incrementaValorAlmacenado();
+        if (pantallaMinutos.getValorAlmacenado() == 0) {
+            pantallaHoras.incrementaValorAlmacenado();
+        }
+        if (pantallaHoras.getValorAlmacenado() == 0) {
+            pantallaDia.incrementaValorAlmacenado();
+        }
+        if (pantallaDia.getValorAlmacenado() == 1) {
+            pantallaMes.incrementaValorAlmacenado();
+        }
+        if (pantallaMes.getValorAlmacenado() == 1) {
+            pantallaAno.incrementaValorAlmacenado();
+        }
+    }
+    
+    /**
+     * Fija las horas, los minutos, los dias, los meses y los años que pongamos
+     */
+    public void fijarFechaYHora (int horas, int minutos, int dias, int meses, int anos) {
+        pantallaHoras.setValorAlmacenado(horas);
+        pantallaMinutos.setValorAlmacenado(minutos);
+        pantallaDia.setValorAlmacenado(dias);
+        pantallaMes.setValorAlmacenado(meses);
+        pantallaAno.setValorAlmacenado(anos);
+    }
+    
+    /**
+     * Devuelve la hora y la fecha actual de esta pantalla en el formao HH:MM DD-MM-AA.
+     */
+    public String getHoraYFecha() {
+        return pantallaHoras.getTextoDeLaPantalla() + ":" + pantallaMinutos.getTextoDeLaPantalla() + " " + pantallaDia.getTextoDeLaPantalla() + "-" + 
+        pantallaMes.getTextoDeLaPantalla() + "-" + pantallaAno.getTextoDeLaPantalla();
+    }
 }
